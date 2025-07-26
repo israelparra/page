@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #e988cc 0%, #764ba2 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -115,11 +115,11 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 10px;    
         }
 
         .month-number-text {
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            background: linear-gradient(135deg, #b846b2, #ad43a8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -141,17 +141,39 @@
             margin-bottom: 15px;
         }
 
+        /* SISTEMA DE IMÁGENES MEJORADO */
         .month-photo {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #ddd6fe, #fae8ff);
+            height: 240px;
             border-radius: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(196, 181, 253, 0.1);
+        }
+
+        .month-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            background: transparent;
+        }
+
+        .month-photo img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Placeholder para cuando no hay imagen */
+        .month-photo.no-image {
             display: flex;
             align-items: center;
             justify-content: center;
             color: #8b5cf6;
             font-size: 3rem;
-            margin-bottom: 10px;
             border: 2px dashed #c4b5fd;
         }
 
@@ -284,6 +306,10 @@
             }
             
             .month-photo {
+                height: 200px;
+            }
+            
+            .month-photo.no-image {
                 height: 150px;
                 font-size: 2.5rem;
             }
@@ -315,116 +341,159 @@
     <div class="container">
         <div class="header">
             <h1>Nuestros 9 Meses Juntos</h1>
-            <p>Un viaje lleno de amor, risas y momentos especiales</p>
-            <div class="hearts">💕✨💖</div>
+            <p>El camino increible de amor</p>
+            <div class="hearts">💖💞💖</div>
         </div>
 
         <div class="timeline">
             <div class="month">
                 <div class="month-content" onclick="openModal(1)">
-                    <div class="month-title"><span class="month-number-text">MES 1</span>El Comienzo de Todo</div>
-                    <div class="month-date">Octubre 2024</div>
+                    <div class="month-title"><span class="month-number-text">INICIO</span>El Comienzo de Todo</div>
+                    <div class="month-date">27/10/2024</div>
                     <div class="month-description">
-                        Todo comenzó con nervios, sonrisas tímidas y esa sensación mágica de que algo especial estaba empezando. Nuestras primeras conversaciones, las mariposas en el estómago...
+                        Todo comenzó con emociones genuinas, sonrisas gigantes y esa sensación mágica de que algo especial estaba empezando. Nuestras primeras emociones sin filtro...
                     </div>
-                    <div class="month-photo">📷</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes1.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="1.jpeg" alt="Nuestro primer mes" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='📷'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(2)">
-                    <div class="month-title"><span class="month-number-text">MES 2</span>Primeras Aventuras</div>
+                    <div class="month-title"><span class="month-number-text">MES 1</span>Primeras Aventuras</div>
                     <div class="month-date">Noviembre 2024</div>
                     <div class="month-description">
-                        Las primeras citas, descubrir cosas en común, reírnos hasta que nos doliera el estómago. Cada momento contigo se convertía en un recuerdo precioso.
+                        Las primeras citas, descubrir cosas en común. Cada momento contigo se convertía en un recuerdo precioso y estaba impresionado de lo increible que era tenerte como novia.
                     </div>
-                    <div class="month-photo">🌟</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes2.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="aa.jpeg" alt="Segundo mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='🌟'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(3)">
-                    <div class="month-title"><span class="month-number-text">MES 3</span>Conociéndonos Más</div>
+                    <div class="month-title"><span class="month-number-text">MES 2</span>Un mes increíble</div>
                     <div class="month-date">Diciembre 2024</div>
                     <div class="month-description">
-                        El mes donde realmente empezamos a conocernos. Tus sueños, tus miedos, tus manías lindas. Cada día descubría algo nuevo que me enamoraba más de ti.
+                        En este mes pasó de todo, culminaste tu universidad, nos la pasamos increible en tu prom. Fue navidad, conocí a tu familia, y fue nuestro primero regalo de navidad. Nuestro amor intenso ya estaba muy presente.
                     </div>
-                    <div class="month-photo">💫</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes3.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="3.jpeg" alt="Tercer mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='💫'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(4)">
-                    <div class="month-title"><span class="month-number-text">MES 4</span>Año Nuevo Juntos</div>
+                    <div class="month-title"><span class="month-number-text">MES 3</span>Año Nuevo Juntos</div>
                     <div class="month-date">Enero 2025</div>
                     <div class="month-description">
                         Empezar el año contigo fue la mejor forma de comenzar 2025. Nuevos planes, nuevas metas, pero sobre todo, nuevos momentos para crear juntos.
                     </div>
-                    <div class="month-photo">🎊</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes4.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="ee.jpeg" alt="Cuarto mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='🎊'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(5)">
-                    <div class="month-title"><span class="month-number-text">MES 5</span>Amor Profundo</div>
+                    <div class="month-title"><span class="month-number-text">MES 4</span>Tu cumpleaños y san valentin</div>
                     <div class="month-date">Febrero 2025</div>
                     <div class="month-description">
-                        El mes del amor llegó y nosotros ya teníamos ventaja. San Valentín fue especial, pero cada día contigo se siente como una celebración del amor.
+                        Celebrar contigo tu cumpleaños fue increible, te veias como una reina y tu feliciad hacía que todo fuera perfecto. Al otro día fuiste a mi casa y celebramos san valentin pd:gracias por los regalos. También fue la fiesta de mi abuelita, donde conociste a mi familia.
                     </div>
-                    <div class="month-photo">💝</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes5.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="5.jpeg" alt="Quinto mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='💝'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(6)">
-                    <div class="month-title"><span class="month-number-text">MES 6</span>Creciendo Juntos</div>
+                    <div class="month-title"><span class="month-number-text">MES 5</span>Creciendo Juntos</div>
                     <div class="month-date">Marzo 2025</div>
                     <div class="month-description">
-                        Seis meses y cada día más seguros de esto que tenemos. Hemos superado retos, hemos crecido como pareja y como personas.
+                        Este mes fue el bautizo del bb, acompañé a ti y a tu familia al evento, gracias por invitarme. También armamos lego, comimos mucho mango. También fue la fiesta de tu tia vero 
                     </div>
-                    <div class="month-photo">🌸</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes6.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="qqq.jpeg" alt="Sexto mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='🌸'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(7)">
-                    <div class="month-title"><span class="month-number-text">MES 7</span>Aventuras Nuevas</div>
+                    <div class="month-title"><span class="month-number-text">MES 6</span>Aventuras Nuevas</div>
                     <div class="month-date">Abril 2025</div>
                     <div class="month-description">
-                        Nuevos lugares, nuevas experiencias, pero siempre de tu mano. Cada aventura es mejor cuando la vivo contigo a mi lado.
+                        Este mes fue corto para nosotros, ya que me fui casi medio mes de vacaciones, pero hablamos por chat desde que nos conocimos, y fortalecimos muchisimo nuestro amor. Regresé y nos amabamos aún mas que antes. También fue la carne asada de tu intima "La Ruby"
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes7.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="jj.jpeg" alt="Séptimo mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='🗺️'">
                     </div>
-                    <div class="month-photo">🗺️</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(8)">
-                    <div class="month-title"><span class="month-number-text">MES 8</span>Momentos Especiales</div>
+                    <div class="month-title"><span class="month-number-text">MES 7</span>Mucha diversion y amor</div>
                     <div class="month-date">Mayo 2025</div>
                     <div class="month-description">
-                        Esos pequeños momentos que se vuelven grandes recuerdos. Una sonrisa tuya en la mañana, un abrazo antes de dormir, tu risa llenando mis días de alegría.
+                        Este mes fue muy random, fuimos al circo(casi moria) al itson, al parque, cafes, laguna etc. Pero lo mas bonito fue que me cocinaste algo DELICIOSO. Me encató el postre y fui demasiado feliz. 
+                        Recuerod que no me lo podía creer llegué a mi casa y seguia sin creerlo, en mi casa todos impresionados, y yo pense QUE MUJER TAN MAS VALIOSA ES MI NOVIA.
                     </div>
-                    <div class="month-photo">☀️</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes8.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="ooo.jpeg" alt="Octavo mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='☀️'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
 
             <div class="month">
                 <div class="month-content" onclick="openModal(9)">
-                    <div class="month-title"><span class="month-number-text">MES 9</span>Nuestro Presente</div>
+                    <div class="month-title"><span class="month-number-text">MES 8</span>AMOR, AMOR Y MAS AMOR</div>
                     <div class="month-date">Junio 2025</div>
                     <div class="month-description">
-                        Aquí estamos, celebrando estos hermosos 9 meses. Gracias por cada sonrisa, cada abrazo, cada momento compartido. Eres mi persona favorita y mi lugar feliz.
+                        Otro mes mas de amarnos, querernos adorarnos, ser random. Desde ver partidos de mexico juntos(te amo mucho por eso), hasta cocinar roles Y QUE SALIERAN CRUDOS.
+                        Fue dia del padre, me maquillaste, te pusiste muy contenta por celebrar un mes mas juntos y fuimos extremadamente felices.
                     </div>
-                    <div class="month-photo">💕</div>
-                    <div class="photo-placeholder">Toca para ver más detalles</div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes9.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="ggg.jpeg" alt="Noveno mes juntos" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='💕'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
+                </div>
+            </div>
+                        <div class="month">
+                <div class="month-content" onclick="openModal(10)">
+                    <div class="month-title"><span class="month-number-text">MES 9</span>NUESTRO PRESENTE</div>
+                    <div class="month-date">Julio 2025</div>
+                    <div class="month-description">
+                        En este mes fue la fiesta de tu tio, fuimos a la feria, vimos peliculas, fuimos a comer, etc. Y ME SOPRENDISTE DEMASIADO HACIENDOME LA TABLA CON SNACK. Cuando llegué a tu casa y tu me diste eso ME IMPRESIONÉ, todo para hacerme feliz y ver el partido juntos.
+                        En estos 9 meses te agradezco inmensamente por todo este TIEMPO. Eres el amor de mi vida, mi princesa. Siempre buscaré apoyarte y amarte, y mis sentimientos hacia ti son genuinos y sinceros. GRACIAS POR ESTOS 9 MESES TE AMO MUCHISIMO AMOR!
+                    </div>
+                    <!-- PARA AGREGAR IMAGEN: Cambia "mes9.jpg" por el nombre de tu foto -->
+                    <div class="month-photo">
+                        <img src="LAST.jpeg" alt="LAST" onerror="this.parentElement.classList.add('no-image'); this.style.display='none'; this.parentElement.innerHTML+='💕'">
+                    </div>
+                    <div class="photo-placeholder">Picale para saber mas de nuestro mes</div>
                 </div>
             </div>
         </div>
@@ -489,15 +558,15 @@
 
         // Modales con contenido detallado
         const monthDetails = {
-            1: {
+           1: {
                 title: "El Comienzo de Todo - Mes 1",
                 content: `
                     <h2>💕 Octubre 2024</h2>
                     <p><strong>Lo que más recuerdo:</strong></p>
-                    <p>• Nuestro primer "hola" y cómo mi corazón se aceleró</p>
-                    <p>• La primera vez que me hiciste reír</p>
-                    <p>• Esos nervios lindos de los primeros mensajes</p>
-                    <p>• Cuando supe que eras especial</p>
+                    <p>• Estaba super nervioso al momento de pedir que fueras mi novia</p>
+                    <p>• Era la primera vez que hacia esto</p>
+                    <p>• Tu mirada y tu sonrisa me lo dijo todo ese dia</p>
+                    <p>• Llegue a mi casa y me sentí en otra dimensión de amor</p>
                     <br>
                     <p><em>"Todo gran amor comienza con una historia pequeña, y la nuestra empezó perfecta."</em></p>
                 `
@@ -507,25 +576,25 @@
                 content: `
                     <h2>🌟 Noviembre 2024</h2>
                     <p><strong>Momentos especiales:</strong></p>
-                    <p>• Nuestra primera cita oficial</p>
-                    <p>• Descubrir que tenemos el mismo sentido del humor</p>
+                    <p>• Nuestra primera cita oficial, desde que nos conocimos sentí una química increible</p>
+                    <p>• El cumpleaños de Itzel</p>
                     <p>• Las primeras fotos juntos</p>
-                    <p>• Cuando empezé a extrañarte</p>
+                    <p>• Cuando fuimos a la posada de tu escuela</p>
                     <br>
-                    <p><em>"Cada primera vez contigo se convirtió en mi nueva experiencia favorita."</em></p>
+                    <p><em>"Cada primera vez contigo se convirtió en mi nueva experiencia favorita, casi como una experiencia religiosa."</em></p>
                 `
             },
             3: {
-                title: "Conociéndonos Más - Mes 3",
+                title: "Un mes increíble - Mes 3",
                 content: `
                     <h2>💫 Diciembre 2024</h2>
-                    <p><strong>Cosas que aprendí de ti:</strong></p>
-                    <p>• Tu comida favorita y por qué</p>
-                    <p>• Tus sueños y aspiraciones</p>
-                    <p>• Esas pequeñas manías que me encantan</p>
-                    <p>• Lo increíblemente fuerte que eres</p>
+                    <p><strong>Cosas que no olvido:</strong></p>
+                    <p>• Estar en tu graduacion, disfrutar con tu familia y amigos</p>
+                    <p>• Sentirme muy orgulloso de ti por tus éxitos</p>
+                    <p>• Pasar una navidad rodeado de tu familia, y sentirme querido por ellos</p>
+                    <p>• El amor tan intenso que tenemos, no me la creo que seas mi novia</p>
                     <br>
-                    <p><em>"Conocerte poco a poco fue como descubrir mi canción favorita."</em></p>
+                    <p><em>"Adentrarme mas en tu vida me daba mas años que hacer mis habitos buenos"</em></p>
                 `
             },
             4: {
@@ -533,10 +602,10 @@
                 content: `
                     <h2>🎊 Enero 2025</h2>
                     <p><strong>Empezando el año contigo:</strong></p>
-                    <p>• Nuestros propósitos de año nuevo</p>
-                    <p>• Los planes que hicimos juntos</p>
-                    <p>• La ilusión de un año lleno de amor</p>
-                    <p>• Cuando supe que quería que fueras parte de todos mis años</p>
+                    <p>• Pasamos año nuevo con tu familia, comimos elote con flamin hots</p>
+                    <p>• Nos amamos muchisimo</p>
+                    <p>• Fuimos a cafes, a comer, nuestra primera ida a la laguna</p>
+                    <p>• Siempre me despertaba y te queria tener conmigo :(</p>
                     <br>
                     <p><em>"Empezar 2025 contigo fue empezar el mejor capítulo de mi vida."</em></p>
                 `
@@ -545,24 +614,24 @@
                 title: "Amor Profundo - Mes 5",
                 content: `
                     <h2>💝 Febrero 2025</h2>
-                    <p><strong>El mes del amor:</strong></p>
-                    <p>• San Valentín fue especial, pero cada día contigo lo es</p>
-                    <p>• Cuando me di cuenta de lo profundo de mis sentimientos</p>
-                    <p>• Esos "te amo" que salen del alma</p>
-                    <p>• La seguridad de haber encontrado a mi persona</p>
+                    <p><strong>El mes de TU CUMPLE!:</strong></p>
+                    <p>• Pasar contigo la noche de tu cumpleaños fue increible, eras toda una princesa</p>
+                    <p>• Te vi y me impresioné por tu belleza, gracias por dejarme compartir esos momentos contigo</p>
+                    <p>• Cuando fuiste a mi casa y fuimos a comer nachos y me regalaste algo me emocioné mucho, sentí tu amor muchisimo</p>
+                    <p>• También conociste a mi familia y me gustó mucho que te conocieran, fue increible ese día</p>
                     <br>
-                    <p><em>"No necesitaba una fecha especial para saber que te amo, pero fue lindo celebrarlo."</em></p>
+                    <p><em>"Gracias por amarme tanto y permitirme celebrar esos momentos juntos"</em></p>
                 `
             },
             6: {
                 title: "Creciendo Juntos - Mes 6",
                 content: `
                     <h2>🌸 Marzo 2025</h2>
-                    <p><strong>Seis meses de nosotros:</strong></p>
-                    <p>• Los retos que hemos superado juntos</p>
-                    <p>• Cómo nos hemos apoyado mutuamente</p>
-                    <p>• El crecimiento que he visto en nosotros</p>
-                    <p>• La confianza que hemos construido</p>
+                    <p><strong>Amandonos mucho:</strong></p>
+                    <p>• Te convertiste en madrina y la pasamos muy bien ese dia</p>
+                    <p>• Armamos un lego y comimos palomitas y mango</p>
+                    <p>• Bailamos juntos por primera vez en la fiesta de tu tia vero</p>
+                    <p>• Y sin duda, desde antes de esa fecha sabiamos que era inmeso nuestro amor, en ese mes yo te amaba intensamente, era inmedible</p>
                     <br>
                     <p><em>"Crecer contigo ha sido la aventura más hermosa que he vivido."</em></p>
                 `
@@ -571,13 +640,13 @@
                 title: "Aventuras Nuevas - Mes 7",
                 content: `
                     <h2>🗺️ Abril 2025</h2>
-                    <p><strong>Explorando juntos:</strong></p>
-                    <p>• Nuevos lugares que hemos descubierto</p>
-                    <p>• Aventuras grandes y pequeñas</p>
-                    <p>• Cómo cada experiencia es mejor contigo</p>
-                    <p>• Los planes futuros que me emociona hacer contigo</p>
+                    <p><strong>Nuevas sensaciones:</strong></p>
+                    <p>• Me fui y solo teniamos el chat</p>
+                    <p>• Los sentimientos que sentí aquella vez fueron fuertisimos, sentia que tenia un amor intenso hacia ti</p>
+                    <p>• Te extrañé muchisimo, solo pensaba en verte y a veces me sentia triste ya que no te vi por mucho tiempo :(</p>
+                    <p>• Fuimos a la pedaloka de tu amiguis y comimos carne asada</p>
                     <br>
-                    <p><em>"Contigo hasta el camino más simple se convierte en una aventura increíble."</em></p>
+                    <p><em>"Estar lejos de ti se sintió muy feo, y cuando nos vimos explotamos de amor"</em></p>
                 `
             },
             8: {
@@ -585,10 +654,10 @@
                 content: `
                     <h2>☀️ Mayo 2025</h2>
                     <p><strong>Atesorando cada momento:</strong></p>
-                    <p>• Tus sonrisas que iluminan mis días</p>
-                    <p>• Esos abrazos que curan cualquier mal día</p>
-                    <p>• Las conversaciones que podemos tener por horas</p>
-                    <p>• Cómo haces que lo ordinario sea extraordinario</p>
+                    <p>• El payaso del circo casi me mataba, tuve mucho miedo gracias por grabar y salvarme</p>
+                    <p>• Cada salida que tuvimos fue increible como siempre</p>
+                    <p>• Que me hayas cocinado me llenó de amor y cuando pienso en eso siempre me dan ganas hasta de llorar por lo increible que eres</p>
+                    <p>• Verte ser feliz me convierte en el hombre mas feliz del mundo, siempre busco eso</p>
                     <br>
                     <p><em>"Los pequeños momentos contigo se han convertido en mis tesoros más grandes."</em></p>
                 `
@@ -597,15 +666,28 @@
                 title: "Nuestro Presente - Mes 9",
                 content: `
                     <h2>💕 Junio 2025</h2>
-                    <p><strong>Celebrando estos 9 meses:</strong></p>
-                    <p>• Gracias por cada día de felicidad</p>
-                    <p>• Por ser mi compañera de vida</p>
-                    <p>• Por amarme como lo haces</p>
+                    <p><strong>Amor inmenso por ti</strong></p>
+                    <p>• Estuvo feo que no salieran los roles, pero ese dia fue increible ME ENCANTA VERTE HACER LO QUE TE GUSTA</p>
+                    <p>• Me encanta todo lo que haces, soy tu mayor fan</p>
+                    <p>• Gracias por amarme como lo haces</p>
                     <p>• Por ser la razón de mi sonrisa diaria</p>
                     <br>
-                    <p><em>"Nueve meses que se sienten como el inicio de para siempre. Te amo infinitamente."</em></p>
+                    <p><em>"Cualquier cosa que hagas yo te voy apoyar infinitamente"</em></p>
                     <br>
-                    <div style="font-size: 2rem;">💕✨💖✨💕</div>
+                `
+            },
+                    10: {
+                title: "LAST",
+                content: `
+                    <h2>Julio 2025</h2>
+                    <p><strong>¡FELIZ 9 MESES!</strong></p>
+                    <p>• MUCHISIMAS GRACIAS POR HACERME EL HOMBRE MAS FELIZ DEL MUNDO/p>
+                    <p>• Eres la niña que cualquiera quisiera tener, gracias por permitirme estar a tu lado y GRACIAS a tu familia por quereme y tratarme tan bien</p>
+                    <p>• Gracias por amarme como siempre lo haces. Cualquiera quisiera estar en tu vida, porque eres una persona CON MUY BUENOS VALORES Y SENTIMIENTOS</p>
+                    <p>• ERES EL AMOR DE MI VIDA</p>
+                    <br>
+                    <p><em>"Gracias por amarme como lo haces, me haces EXTREMADAMENTE FELIZ y te amo con toda mi alma amor, feliz 9 MESES"</em></p>
+                    <br>
                 `
             }
         };
